@@ -1,5 +1,7 @@
 require 'minitest/autorun'
 
+#creating a calculater class, which will have a stream of numbers on initialization
+
 class Calculator
   attr_reader :digits
 
@@ -18,18 +20,19 @@ class Calculator
   private
 
   def parse_input(str)
-    str.split(',').map { |n| n.to_i }
+    str.split(',').map { |n| n.to_i}
   end
+
 end
 
 describe Calculator do
-  it 'sums provided digits' do
-    calc = Calculator.new('1,2,3,4,5')
-    calc.sum.must_equal(15)
-  end
+ it 'sums provided digits' do
+   calc = Calculator.new('1,2,3,4,5')
+   calc.sum.must_equal(15)
+ end
 
   it 'multiplies provided digits' do
-    calc = Calculator.new('4,5')
-    calc.multiply.must_equal(20)
+    calc = Calculator.new('1,2,3')
+    calc.multiply.must_equal(6)
   end
 end
